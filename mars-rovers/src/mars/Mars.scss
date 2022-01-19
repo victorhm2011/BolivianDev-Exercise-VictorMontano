@@ -1,0 +1,9 @@
+.mars-container {
+    display: flex;
+    flex-wrap: wrap;
+    margin: 0 100px 0 100px;
+
+    &_cell-container {
+        width: 33%;
+    }
+}
