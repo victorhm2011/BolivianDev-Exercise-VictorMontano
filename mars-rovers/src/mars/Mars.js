@@ -2,7 +2,13 @@ import './Mars.scss';
 
 function Mars() {
 
-    let cells = [1,2,3,4,5,6,7,8,9]
+    const size = 5;
+    let cells = [];
+    for (let i = size - 1; i >= 0; i--) {
+        for (let j = 0; j < size; j++) {
+            cells.push(j + "-" + i);
+        }
+    };
     return (
         <div>
             <div className="mars-container">
