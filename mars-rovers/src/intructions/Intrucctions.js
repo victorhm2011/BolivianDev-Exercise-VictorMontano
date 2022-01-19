@@ -1,4 +1,6 @@
+import Coordinates from './coordinates/Coordinates';
 import './Instrucctions.scss';
+import './coordinates/Coordinates'
 
 function Instrucctions() {
     return (
@@ -12,6 +14,7 @@ function Instrucctions() {
             <div>
                 <p>By: Victor Hugo Montaño</p>
             </div>
+            <Coordinates></Coordinates>
         </div>
     );
 }
