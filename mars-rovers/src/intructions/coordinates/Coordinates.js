@@ -28,6 +28,18 @@ function Coordinates() {
         facing = (facing + 1) > W ? N : facing + 1;
     }
 
+    function move() {
+        if (facing == N) {
+            y++;
+        } else if (facing == E) {
+            x++;
+        } else if (facing == S) {
+            y--;
+        } else if (facing == W) {
+            x--;
+        }
+    }
+
     const [inputs, setInputs] = useState({});
 
     const handleChange = (event) => {
