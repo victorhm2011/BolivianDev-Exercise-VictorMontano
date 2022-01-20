@@ -22,6 +22,20 @@ function Coordinates() {
         facing = inputFacing;
     }
 
+    function setPositionString(startPosition) {
+        let directionInput = 1;
+        if (startPosition[2] === 'N') {
+            directionInput = 1;
+        } else if (startPosition[2] === 'E') {
+            directionInput = 2;
+        } else if (startPosition[2] === 'S') {
+            directionInput = 3;
+        } else if (startPosition[2] === 'W') {
+            directionInput = 4;
+        }
+        setPosition(Number(startPosition[0]), Number(startPosition[1]), directionInput);
+    }
+
     function resetVariables(){
         x = 0;
         y = 0;
@@ -93,7 +107,7 @@ function Coordinates() {
     const handleSubmit = (event) => {
         event.preventDefault();
         resetVariables();
-        setPosition(1,2,N);
+        setPositionString(inputs.start);
         process(inputs.coordinates);
         getResult();
         console.log(inputs.coordinates, resp);
