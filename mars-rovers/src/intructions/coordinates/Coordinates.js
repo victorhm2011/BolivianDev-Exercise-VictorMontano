@@ -120,7 +120,7 @@ function Coordinates() {
 
     return (
         <div>
-            <div>
+            <div className='coordinates-container'>
                 <form onSubmit={handleSubmit}>
                     <label>Start position:
                     <input 

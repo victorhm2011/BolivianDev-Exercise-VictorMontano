@@ -1,5 +1,4 @@
 import './Mars.scss';
-import {render} from "react-dom";
 
 function Mars({coordinates}) {
     //consts
@@ -39,7 +38,7 @@ function Mars({coordinates}) {
                         return (
                         <div id={cell} className={cellClass}>
                             <p>{cell}</p>
-                            <p>{showDirection}</p>
+                            <p className='direction'>{showDirection}</p>
                         </div>);
                 })}
             </div>
