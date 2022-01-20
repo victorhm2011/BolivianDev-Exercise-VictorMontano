@@ -52,6 +52,12 @@ function Coordinates() {
         }
     }
 
+    function process(commands) {
+        for (let idx = 0; idx < commands.length; idx++) {
+            processMovements(commands[idx]);
+        }
+    }
+
     const [inputs, setInputs] = useState({});
 
     const handleChange = (event) => {
