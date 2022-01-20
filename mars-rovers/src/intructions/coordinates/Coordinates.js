@@ -20,6 +20,14 @@ function Coordinates() {
         facing = inputFacing;
     }
 
+    function turnLeft() {
+        facing = (facing - 1) < N ? W : facing - 1;
+    }
+
+    function turnRight() {
+        facing = (facing + 1) > W ? N : facing + 1;
+    }
+
     const [inputs, setInputs] = useState({});
 
     const handleChange = (event) => {
