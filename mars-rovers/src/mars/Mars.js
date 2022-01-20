@@ -1,7 +1,7 @@
 import './Mars.scss';
 
 function Mars({coordinates}) {
-
+    //consts
     const size = 5;
     let cells = [];
     for (let i = size - 1; i >= 0; i--) {
@@ -9,6 +9,13 @@ function Mars({coordinates}) {
             cells.push(j + "-" + i);
         }
     };
+
+    //variables
+    let cellCoordinates = '0-0';
+    let direcction = 'N';
+
+    
+
     return (
         <div id="mars-component">
             <div className="mars-container">
