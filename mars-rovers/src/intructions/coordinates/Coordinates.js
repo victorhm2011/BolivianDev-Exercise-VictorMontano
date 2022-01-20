@@ -1,5 +1,6 @@
 import './Coordinates.scss';
 import { useState } from "react";
+import Mars from '../../mars/Mars';
 
 function Coordinates() {
     //constants
@@ -115,25 +116,28 @@ function Coordinates() {
 
     return (
         <div>
-            <form onSubmit={handleSubmit}>
-                <label>Start position:
-                <input 
-                    type="text" 
-                    name="start" 
-                    value={inputs.start || ""} 
-                    onChange={handleChange}
-                />
-                </label>
-                <label>Coordinates:
+            <div>
+                <form onSubmit={handleSubmit}>
+                    <label>Start position:
                     <input 
-                    type="text" 
-                    name="coordinates" 
-                    value={inputs.coordinates || ""} 
-                    onChange={handleChange}
+                        type="text" 
+                        name="start" 
+                        value={inputs.start || ""} 
+                        onChange={handleChange}
                     />
-                </label>
-                <input type='submit' value='Execute'/>
-            </form>
+                    </label>
+                    <label>Coordinates:
+                        <input 
+                        type="text" 
+                        name="coordinates" 
+                        value={inputs.coordinates || ""} 
+                        onChange={handleChange}
+                        />
+                    </label>
+                    <input type='submit' value='Execute'/>
+                </form>
+            </div>
+            <Mars></Mars>
         </div>
     )
 }
