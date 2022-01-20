@@ -1,6 +1,6 @@
 import './Mars.scss';
 
-function Mars() {
+function Mars({coordinates}) {
 
     const size = 5;
     let cells = [];
@@ -10,12 +10,13 @@ function Mars() {
         }
     };
     return (
-        <div>
+        <div id="mars-component">
             <div className="mars-container">
                 {
                     cells.map(cell => (
                         <div className="mars-container_cell-container">
                             <p>{cell}</p>
+                            <p>{coordinates}</p>
                         </div>
                     ))
                 }

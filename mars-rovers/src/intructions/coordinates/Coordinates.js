@@ -1,6 +1,7 @@
 import './Coordinates.scss';
 import { useState } from "react";
 import Mars from '../../mars/Mars';
+import {render} from "react-dom";
 
 function Coordinates() {
     //constants
@@ -111,7 +112,10 @@ function Coordinates() {
         setPositionString(inputs.start);
         process(inputs.coordinates);
         getResult();
-        console.log(inputs.coordinates, resp);
+        const element = (
+            <Mars coordinates={resp}></Mars>
+          );
+        render(element, document.getElementById('mars-component'));
     }
 
     return (
@@ -137,7 +141,7 @@ function Coordinates() {
                     <input type='submit' value='Execute'/>
                 </form>
             </div>
-            <Mars></Mars>
+            <Mars coordinates={resp}></Mars>
         </div>
     )
 }
