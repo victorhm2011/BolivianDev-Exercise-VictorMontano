@@ -13,6 +13,7 @@ function Coordinates() {
     let y = 0;
     let facing = N;
     let direcction = 'N';
+    let resp = '00N';
 
     //functions
     function setPosition(inputX, inputY, inputFacing) {
@@ -26,6 +27,7 @@ function Coordinates() {
         y = 0;
         facing = N;
         direcction = 'N';
+        resp = '';
     }
 
     function turnLeft() {
@@ -37,23 +39,23 @@ function Coordinates() {
     }
 
     function move() {
-        if (facing == N) {
+        if (facing === N) {
             y++;
-        } else if (facing == E) {
+        } else if (facing === E) {
             x++;
-        } else if (facing == S) {
+        } else if (facing === S) {
             y--;
-        } else if (facing == W) {
+        } else if (facing === W) {
             x--;
         }
     }
 
     function processMovements(command) {
-        if (command == 'L') {
+        if (command === 'L') {
             turnLeft();
-        } else if (command == 'R') {
+        } else if (command === 'R') {
             turnRight();
-        } else if (command == 'M') {
+        } else if (command === 'M') {
             move();
         } else {
             alert("Incorrect command to move rover, please use: L or R or M");
@@ -66,6 +68,20 @@ function Coordinates() {
         }
     }
 
+    function getResult() {
+        direcction = 'N';
+        if (facing === 1) {
+            direcction = 'N';
+        } else if (facing === 2) {
+            direcction = 'E';
+        } else if (facing === 3) {
+            direcction = 'S';
+        } else if (facing === 4) {
+            direcction = 'W';
+        }
+        resp = x + direcction + y ;
+    }
+
     const [inputs, setInputs] = useState({});
 
     const handleChange = (event) => {
@@ -76,7 +92,11 @@ function Coordinates() {
 
     const handleSubmit = (event) => {
         event.preventDefault();
-        console.log(inputs.coordinates);
+        resetVariables();
+        setPosition(1,2,N);
+        process(inputs.coordinates);
+        getResult();
+        console.log(inputs.coordinates, resp);
     }
 
     return (
