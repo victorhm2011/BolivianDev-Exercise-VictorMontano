@@ -1,0 +1,15 @@
+.instrucctions-container {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    justify-content: center;
+
+    &_element {
+        margin: 20px 0 0 0;
+    }
+
+    &_element-container {
+        display: flex;
+        justify-content: center;
+    }
+}
