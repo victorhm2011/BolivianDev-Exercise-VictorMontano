@@ -12,12 +12,20 @@ function Coordinates() {
     let x = 0;
     let y = 0;
     let facing = N;
+    let direcction = 'N';
 
     //functions
     function setPosition(inputX, inputY, inputFacing) {
         x = inputX;
         y = inputY;
         facing = inputFacing;
+    }
+
+    function resetVariables(){
+        x = 0;
+        y = 0;
+        facing = N;
+        direcction = 'N';
     }
 
     function turnLeft() {
