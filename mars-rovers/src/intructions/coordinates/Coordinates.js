@@ -13,6 +13,13 @@ function Coordinates() {
     let y = 0;
     let facing = N;
 
+    //functions
+    function setPosition(inputX, inputY, inputFacing) {
+        x = inputX;
+        y = inputY;
+        facing = inputFacing;
+    }
+
     const [inputs, setInputs] = useState({});
 
     const handleChange = (event) => {
