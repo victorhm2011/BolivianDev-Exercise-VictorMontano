@@ -40,6 +40,18 @@ function Coordinates() {
         }
     }
 
+    function processMovements(command) {
+        if (command == 'L') {
+            turnLeft();
+        } else if (command == 'R') {
+            turnRight();
+        } else if (command == 'M') {
+            move();
+        } else {
+            alert("Incorrect command to move rover, please use: L or R or M");
+        }
+    }
+
     const [inputs, setInputs] = useState({});
 
     const handleChange = (event) => {
