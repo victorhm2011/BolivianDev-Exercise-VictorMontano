@@ -8,6 +8,11 @@ function Coordinates() {
     const S = 3;
     const W = 4;
 
+    //variables
+    let x = 0;
+    let y = 0;
+    let facing = N;
+
     const [inputs, setInputs] = useState({});
 
     const handleChange = (event) => {
