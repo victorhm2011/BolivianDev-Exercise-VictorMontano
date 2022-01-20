@@ -14,7 +14,11 @@ function Mars({coordinates}) {
     let cellCoordinates = '0-0';
     let direcction = 'N';
 
-    
+    function transformCoordinates() {
+        cellCoordinates = coordinates[0] + '-' + coordinates[2];
+        direcction = coordinates[1];
+    }
+
 
     return (
         <div id="mars-component">
@@ -23,7 +27,7 @@ function Mars({coordinates}) {
                     cells.map(cell => (
                         <div className="mars-container_cell-container">
                             <p>{cell}</p>
-                            <p>{coordinates}</p>
+                            
                         </div>
                     ))
                 }
