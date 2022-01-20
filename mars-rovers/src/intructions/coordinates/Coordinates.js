@@ -121,25 +121,31 @@ function Coordinates() {
     return (
         <div>
             <div className='coordinates-container'>
-                <form onSubmit={handleSubmit}>
-                    <label>Start position:
-                    <input 
-                        type="text" 
-                        name="start" 
-                        value={inputs.start || ""} 
-                        onChange={handleChange}
-                    />
-                    </label>
-                    <label>Coordinates:
+                <div>
+                    <form onSubmit={handleSubmit}>
+                        <label className='coordinates-container_label'>Start position:
                         <input 
-                        type="text" 
-                        name="coordinates" 
-                        value={inputs.coordinates || ""} 
-                        onChange={handleChange}
+                            type="text" 
+                            name="start" 
+                            className='coordinates-container_input'
+                            placeholder="12N"
+                            value={inputs.start || ""} 
+                            onChange={handleChange}
                         />
-                    </label>
-                    <input type='submit' value='Execute'/>
-                </form>
+                        </label>
+                        <label className='coordinates-container_label'>Coordinates:
+                            <input 
+                            type="text" 
+                            name="coordinates" 
+                            className='coordinates-container_input'
+                            placeholder="LMLMLMLMM"
+                            value={inputs.coordinates || ""} 
+                            onChange={handleChange}
+                            />
+                        </label>
+                        <input className='coordinates-container_submit' type='submit' value='Execute'/>
+                    </form>
+                </div>
             </div>
             <Mars coordinates={resp}></Mars>
         </div>

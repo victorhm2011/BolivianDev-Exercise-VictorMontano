@@ -1,4 +1,19 @@
 .coordinates-container {
     margin-bottom: 30px;
-    margin-top: 20px;
+    margin-top: 40px;
+    display: flex;
+    justify-content: center;
+
+    &_label {
+        margin-left: 20px;
+        margin-right: 20px;
+    }
+
+    &_input {
+        margin-left: 5px;
+    }
+
+    &_submit {
+        margin-right: 20px;
+    }
 }
